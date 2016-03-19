@@ -1,0 +1,105 @@
+/*!
+    Theme Name:     Rexy
+    Theme URI:      http://rexy.me/
+    Description:    A minimalist theme! 
+    Author:         Rex Hoang
+    Author URI:     http://rexy.me/
+    Version:        3.0.0
+
+    ================================================
+    ================================================
+
+*/
+
+@import "compass/css3/";
+//@import "susy";
+//@import "animation";
+//@import "animation/animate";
+
+// sometimes we change vendors styling
+@import 'utils/variables';
+@import 'utils/include-media';
+@import 'utils/mixins';
+// @import 'utils/functions';
+// @import 'utils/placeholders';
+
+@import 'vendors/normalize';
+@import 'vendors/html5-boilerplate';
+// @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
+// @import 'vendors/jquery-ui';
+
+
+/* Website base - basic styling */
+// @import 'base/reset';
+@import 'bases/typography';
+@import 'bases/global';
+
+// @import 'layout/containers';
+// @import 'layout/header';
+// @import 'layout/footer';
+// @import 'layout/sidebar';
+
+@import 'modules/nav';
+// @import 'modules/button';
+// @import 'modules/grid';
+// @import 'modules/form';
+
+
+// @import 'pages/home';
+// @import 'pages/contact';
+
+// @import 'themes/theme';
+// @import 'themes/admin';
+
+@import 'shame';
+
+/*
+
+sass/
+|
+|– vendors/
+|   |– _bootstrap.scss   # Bootstrap
+|   |– _jquery-ui.scss   # jQuery UI
+|   ...                  # Etc…
+|
+|– utils/
+|   |– _variables.scss   # Sass Variables
+|   |– _functions.scss   # Sass Functions
+|   |– _mixins.scss      # Sass Mixins
+|   |– _helpers.scss     # Class & placeholders helpers
+|
+|– base/
+|   |– _reset.scss       # Reset/normalize
+|   |– _typography.scss  # Typography rules
+|   ...                  # Etc…
+|
+|– layout/partials/
+|   |– _navigation.scss  # Navigation
+|   |– _grid.scss        # Grid system
+|   |– _header.scss      # Header
+|   |– _footer.scss      # Footer
+|   |– _sidebar.scss     # Sidebar
+|   |– _forms.scss       # Forms
+|   ...                  # Etc…
+|
+|– components/modules/
+|   |– _buttons.scss     # Buttons
+|   |– _carousel.scss    # Carousel
+|   |– _cover.scss       # Cover
+|   |– _dropdown.scss    # Dropdown
+|   ...                  # Etc…
+|
+|– pages/
+|   |– _home.scss        # Home specific styles
+|   |– _contact.scss     # Contact specific styles
+|   ...                  # Etc…
+|
+|– themes/
+|   |– _theme.scss       # Default theme
+|   |– _admin.scss       # Admin theme
+|   ...                  # Etc…
+|
+|
+`– main.scss             # Main Sass file
+
+*/
