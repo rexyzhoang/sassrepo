@@ -1,0 +1,124 @@
+html {
+    font-size: 100%;
+    // background: $bg-color;
+    //  min-width: 1024px;
+}
+/* IPHONE & IPAD SCROLLBAR *//*-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; - min width to fix ipad */
+
+html, button, input, select, textarea {
+    // font-family: arial, sans-serif;
+    // color: #222;
+}
+
+body {
+    // margin: 0;
+    // line-height: 1.4;
+    font-family: $helvetica-stack;
+    font-size: 1rem;
+    background: $bg-color;
+    color: $text-color;
+}
+
+/*
+::-moz-selection {
+    background: #7AAD21;
+    color: #fff;
+    text-shadow: none;
+}
+::selection {
+    background: #7AAD21;
+    color: #fff;
+    text-shadow: none;
+}
+*/
+
+
+// need separate rules for each browser. Otherwise the whole group would be ignored by all browsers. >> http://stackoverflow.com/a/2610741
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: $lightgrey;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $lightgrey;
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $lightgrey;
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: $lightgrey;
+}
+
+
+/* Links */
+a, a:visited {
+    color: $link-color;
+    text-decoration: none;
+//    border-bottom: 1px dotted;
+    @include transition(0.3s ease);
+    &:hover {
+//      color: $link-hover;
+//      background: $rexy-red-color;
+    }
+}
+
+/** Lists **/
+dl, menu {
+    margin: 0.2rem 0;
+    padding: 0 0 0 10px;
+}
+
+dd {
+    margin: 0 0 0 40px;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+figure {
+    margin: 0;
+}
+
+
+/** Classes **/
+.centre {
+    max-width: $container;
+    margin: 0 auto;
+    @include until($tablet) {
+        padding: 0 10%;
+    }
+}
+
+.align-left {
+    float: left;
+}
+
+.align-right {
+    float: right;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+}
+
+.ib {
+    display: inline-block;
+}
+
+.justified-alignment {
+    text-align: justify;
+    // Create a default placeholder
+    // No. of placeholders = max elements per row – 2
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.ja-children {
+    display: inline-block;
+    vertical-align: top;
+}

@@ -1,0 +1,83 @@
+//
+// REM mixin with pixel fallback
+//
+// NOTE: You must set the font-size to 62.5% on the html element
+//
+
+@mixin font-size($sizeValue: 16) {
+  font-size: $sizeValue + px;
+  font-size: ($sizeValue / 10) + rem;
+}
+
+@mixin line-height($sizeValue: 16) {
+  line-height: $sizeValue + px;
+  line-height: ($sizeValue / 10) + rem;
+}
+
+
+
+// media query mixins
+@mixin at-least($device-width) {
+  @media screen and (min-width: $device-width) {
+    @content 
+  }
+}
+
+@mixin between($tablet, $desktop) {
+  @media screen and (min-width: $tablet + 1) and (max-width: $desktop - 1) {
+    @content 
+  }
+}
+
+@mixin until($device-width) {
+  @media screen and (max-width: $device-width - 1) {
+    @content 
+  }
+}
+
+// CSS Shapes
+@mixin arrow-left($size, $color) {
+    width: 0; 
+    height: 0; 
+    display: inline-block;
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+
+    border-right: $size solid $color;
+}
+
+// Thin Arrow Down
+@mixin arrow-down-position($top, $left) {
+    position: relative;
+    &:after,
+    &:before {
+        top: $top;
+        left: $left;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+}
+
+@mixin arrow-down($size, $bgcolor, $arrow_color) {
+    &:after {
+        border-color: transparent;
+        border-top-color: $bgcolor;
+        border-width: $size;
+        margin-left: -$size;
+    }
+    &:before {
+        border-color: transparent;
+        border-top-color: $arrow_color;
+        border-width: $size + 3;
+        margin-left: -$size - 3;
+    }
+}
+
+// USAGE
+// @include arrow-down-position(30%, 90%);
+// @include arrow-down(5px, $darkblue, $white);
+

@@ -1,0 +1,258 @@
+body {
+    position: relative;
+    right: 0;
+    -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+    -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+    -ms-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+    -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+    transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
+    &.push-toleft {
+        right: 250px;
+        #mobile {
+            right: 0px;
+        }
+    }
+}
+
+
+/* ----------------------------- */
+/*        Main Navigation        */
+/* ----------------------------- */
+
+//GREAT: Mobile nav stays > Prevent empty scrolling on mobile // to be removed not necessary anymore
+.mobile-wrapper {
+    // position: fixed;
+    height: 100%;
+    // display: none;
+    // overflow: hidden;
+}
+
+.main-nav li {position:relative;}
+.main-nav ul {display:none;} /* hide until JS loads */
+.arrow {font-size:.7em;}
+
+/* Main Links */
+.main-nav > ul > li > a {
+    display:inline-block;
+    color:#fff;
+    text-decoration: none;
+    // padding:10px;
+}
+/* has open dropdown */
+ .nav-parent {
+    background:rgba(0, 0, 0, .4)!important;
+}
+/* First level dropdowns */
+ .main-nav > ul > li {
+    display:inline-block;
+    position:relative;
+}
+.main-nav > ul > li > ul {
+    position:absolute;
+    left:0;    
+    background:#ccc;
+}
+.main-nav > ul > li > ul > li > a {
+    // min-width:150px;
+    // display:block;
+    // padding:5px;
+    // text-decoration:none; 
+    // color:#fff;
+}
+/* Any sub-level dropdowns */
+ .main-nav > ul > li > ul ul {
+    position: absolute;
+    left: 100%;
+    top: 0;    
+    background: #ccc;
+}
+.nav-reposition {
+    left:auto!important;
+    right:100%;
+}
+.main-nav > ul > li > ul > li > ul a {
+    display:block;
+    min-width:150px;
+    padding:5px;
+    text-decoration:none;    
+    color:#fff;
+}
+
+
+/* ----------------------------- */
+/*        Mobile Navigation      */
+/* ----------------------------- */
+.mobile-header {
+    display: none;
+    position: absolute;
+    //
+    top: 0.45rem;
+    right: 5%;
+    z-index: 999999;
+    // padding: 0.5rem 0;
+    // border: 1px solid $lightgrey;
+}
+
+#mobile {
+    // position: absolute;
+    position: fixed;
+    z-index: 999;
+    // width: auto;
+    width: 250px;
+    height:100%;
+    
+    right:-250px;
+    // KEY for long content NAV
+    overflow: scroll;
+        
+    -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+    -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+    -ms-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+    -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+    transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
+
+}
+.mobile-nav-wrap {
+    width: 250px;
+    // some cases, min height < real height
+    min-height: 100%;
+    // background: #272727;
+    background:  #141414;
+    box-shadow: inset -10px 0 40px #000;
+}
+
+    .mobile-open {
+        position: absolute;
+        right: 5%;
+        top: 2rem;
+        z-index: 1;
+
+        cursor: pointer;
+        color: $white;
+        font-size: 2rem;
+        text-decoration: none;
+
+        @include at-least($desktop) {
+            display: none;
+        }
+    }
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    display: none;
+    background:rgb(0,0,0);
+    background:rgba(0,0,0,.4);
+    z-index:9999999999;
+}
+
+/* Cancel button */
+a.mobile-cancel {
+    display: block;
+    // background: rgb(152, 24, 24);
+    background: rgba($candyred,1);
+    box-shadow:inset 0 -1px 0 #531111;
+    // border-bottom:1px solid $lightgrey;
+    box-shadow: 0 0 5px #bbb;
+    color: #fff;
+    position: relative;
+    padding: 15px 10px;
+    text-decoration: none;
+}
+.mobile-cancel i {
+    float:right;
+}
+
+.indicator,
+.indicator-active {
+    color: #FFF;
+    position: absolute;
+    right: 5px;
+    line-height: 35px;
+    top: 6px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    cursor: pointer;
+    border-radius:20px;
+    // background: rgba(255, 255, 255, 0.12);
+}
+
+.indicator:hover,
+.indicator-active:hover {
+    background:#606060;
+}
+
+/* ====== MOBILE TOP LEVEL ====== */
+
+/* container */
+#mobile-nav-wrap {
+    background: #222;
+    position: absolute;
+    min-height: 100%;
+    z-index: 999;
+    width: 200px;
+}
+    .mobile-nav {
+        margin: 0;
+        padding: 0;
+    }
+
+/* li's */
+.mobile-nav > li {
+    display: block;
+    position: relative;
+}
+/* links */
+.mobile-nav > li > a:link, 
+.mobile-nav li a:visited {
+    text-decoration: none;
+    color: #ccc;
+    display: block;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 18px;
+    line-height: 49px;
+    // border-bottom:1px dashed #575757;
+    border-bottom: 1px solid #0c0c0c;
+    border-top: 1px solid #1b1b1b;
+}
+.mobile-nav > li > a:hover {
+
+}
+
+/* ====== 1ST DROPDOWN  ====== */
+
+/* container */
+.mobile-nav > li  ul {
+    background: rgba(0, 0, 0, 0.23);
+    display: none;
+    box-shadow:inset 0 -1px 0px #575757, inset 0 5px 15px #222;
+    &:not(:last-of-type) {
+    }
+}
+/*  li's */
+.mobile-nav > li > ul  li {
+    position: relative;
+}
+/* links */
+.mobile-nav > li > ul > li  a:link, 
+.mobile-nav > li > ul > li  a:visited {
+    text-decoration: none;
+    color: #aaa;
+    padding: 0.6rem 10px 0.6rem 25px;
+    display: block;
+}
+.mobile-nav > li > ul > li  a:hover {
+
+}
+@media screen and (max-width: 800px) {
+    .main-nav {
+        display: none;
+    }
+    .mobile-header {
+        display: block;
+    }
+}

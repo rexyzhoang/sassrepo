@@ -1,0 +1,70 @@
+// April 12, 2015: put all the vars here has a certain advantage than put it to where it belongs to, which is sometimes hard to find
+
+/*================================================
+    Website theme: Color glossary                
+=================================================*/
+
+$rexy-red-color: #B32848;
+$lightblack: #1A1A1A;
+$darkgrey: #E4E4E4;
+$white: #fff;
+$lightgrey: #bbb;
+$text-color: #fff;
+$black: #000;
+
+$bg-color: $white;
+$text-color: $lightblack;
+$link-color: $rexy-red-color;
+$link-hover: $white;
+
+
+// media queries naming
+$private:   320px;  
+$corporal:  500px;    
+$sergeant:  680px;
+$captain:   960px;
+$major:     1040px;
+$lieutenant: 1120px;
+$colonel:   1300px;
+$general:   1480px;
+
+$mobile:    480px; // iPhone screen
+// $tablet:    680px;
+$tablet:    768px; // iPad screen
+$desktop:   1000px;
+$container: 1000px;
+
+
+
+
+
+// Font stacks
+$helvetica-stack: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+
+%titillium-fontfamily {
+    font-family: 'Titillium Web', sans-serif;
+}
+%lato-fontfamily {
+    font-family: 'Lato', sans-serif;
+}
+
+%vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+%va-parent {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+   // just in case - using child using pos absolute
+    position: relative;
+}
+
+
+// styling (padding/margin) 
+$page-padding: 1.25rem;
+

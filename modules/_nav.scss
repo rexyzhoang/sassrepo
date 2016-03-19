@@ -1,0 +1,20 @@
+/** Header **/
+.branding {
+}
+
+/** Navigation **/
+nav.primary {
+    width: $container;
+    margin: 0 auto;
+    li {
+        float: left;
+        display: block;
+    }
+    a {
+        color: $link-color;
+        @include transition( all 0.6s ease-in );
+        &:hover {
+            color: lighten($link-color, 80%);
+        }
+    }
+}
